@@ -42,6 +42,6 @@ public class DashboardController extends HttpServlet {
         request.setAttribute("welcomeMessage", "Welcome back, " + user.getFullName() + "!");
         
         // Forward to dashboard
-        request.getRequestDispatcher("/views/dashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("/dashboard.jsp").forward(request, response);
     }
 }

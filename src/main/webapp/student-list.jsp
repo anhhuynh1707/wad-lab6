@@ -188,7 +188,7 @@
         <!-- Add button - Admin only -->
         <c:if test="${sessionScope.role eq 'admin'}">
             <div style="margin: 20px 0;">
-                <a href="student?action=new" class="btn-add">➕ Add New Student</a>
+                <a href="student?action=new" class="btn">➕ Add New Student</a>
             </div>
         </c:if>
     
@@ -250,6 +250,7 @@
 	    </form>
 	</div>
 	<br>
+	<!-- Student Table -->
     <table>
         <thead>
             <tr>
@@ -297,7 +298,9 @@
                 ${order == 'asc' ? '▲' : '▼'}
             </c:if>
         </th>
-        <th>Actions</th>
+        <c:if test="${sessionScope.role eq 'admin'}">
+                        <th>Actions</th>
+        </c:if>
             </tr>
         </thead>
         <tbody>
@@ -308,12 +311,16 @@
                     <td>${student.fullName}</td>
                     <td>${student.email != null ? student.email : 'N/A'}</td>
                     <td>${student.major != null ? student.major : 'N/A'}</td>
-                    <td>
-                        <a href="student?action=edit&id=${student.id}" class="action-link">✏️ Edit</a>
-                        <a href="student?action=delete&id=${student.id}" 
-                           class="action-link delete-link"
-                           onclick="return confirm('Are you sure?')">🗑️ Delete</a>
-                    </td>
+                    <!-- Action buttons - Admin only -->
+                        <c:if test="${sessionScope.role eq 'admin'}">
+                            <td>
+                                <a href="student?action=edit&id=${student.id}" 
+                                   class="action-link">✏️ Edit</a>
+                                <a href="student?action=delete&id=${student.id}" 
+                                   class="action-link"
+                                   onclick="return confirm('Delete this student?')">🗑️ Delete</a>
+                            </td>
+                        </c:if>
                 </tr>
             </c:forEach>
             
