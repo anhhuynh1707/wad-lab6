@@ -1,10 +1,13 @@
-### LAB 6: AUTHENTICATION & SESSION MANAGEMENT
-STUDENT INFORMATION:
+# LAB 6: AUTHENTICATION & SESSION MANAGEMENT
+#### STUDENT INFORMATION:
+
 Name: Huỳnh Tuấn Anh
+
 Student ID: ITITIU23003
+
 Class: WAD_G01_Lab03_Tue1234
 
-COMPLETED EXERCISES:
+#### COMPLETED EXERCISES:
 [x] Exercise 1: Database & User Model
 [x] Exercise 2: User Model & DAO
 [x] Exercise 3: Login/Logout Controllers
@@ -14,14 +17,14 @@ COMPLETED EXERCISES:
 [x] Exercise 7: Role-Based UI
 [x] Exercise 8: Change Password
 
-AUTHENTICATION COMPONENTS:
+#### AUTHENTICATION COMPONENTS:
 - Models: User.java
 - DAOs: UserDAO.java
 - Controllers: LoginController.java, LogoutController.java, DashboardController.java
 - Filters: AuthFilter.java, AdminFilter.java
 - Views: login.jsp, dashboard.jsp, updated student-list.jsp
 
-TEST CREDENTIALS:
+#### TEST CREDENTIALS:
 Admin:
 - Username: admin
 - Password: password123
@@ -30,7 +33,7 @@ Regular User:
 - Username: john
 - Password: password123
 
-FEATURES IMPLEMENTED:
+#### FEATURES IMPLEMENTED:
 - User authentication with BCrypt
 - Session management
 - Login/Logout functionality
@@ -40,7 +43,7 @@ FEATURES IMPLEMENTED:
 - Role-based UI elements
 - Password security
 
-SECURITY MEASURES:
+#### SECURITY MEASURES:
 - BCrypt password hashing
 - Session regeneration after login
 - Session timeout (30 minutes)
@@ -48,13 +51,14 @@ SECURITY MEASURES:
 - Input validation
 - XSS prevention (JSTL escaping)
 
-KNOWN ISSUES:
+#### KNOWN ISSUES:
 - [List any bugs or limitations]
 
-BONUS FEATURES:
+#### BONUS FEATURES:
 - [List any bonus features implemented]
 
-TIME SPENT: [Approximate hours]
+#### TIME SPENT:
+6 hours
 
-TESTING NOTES:
+#### TESTING NOTES:
 [Describe how you tested authentication, filters, and authorization]
