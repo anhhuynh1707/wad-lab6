@@ -26,6 +26,8 @@ public class UserDAO {
     
     private static final String SQL_INSERT = 
         "INSERT INTO users (username, password, full_name, role) VALUES (?, ?, ?, ?)";
+    private static final String SQL_UPDATE_PASSWORD = 
+            "UPDATE users SET password = ? WHERE id = ?";
     
     // Get database connection
     private Connection getConnection() throws SQLException {
@@ -172,7 +174,25 @@ public class UserDAO {
         user.setLastLogin(rs.getTimestamp("last_login"));
         return user;
     }
-    
+    public boolean updatePassword(int userId, String newHashedPassword) {        
+        try (Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(SQL_UPDATE_PASSWORD)) {
+
+            stmt.setString(1, newHashedPassword);
+            stmt.setInt(2, userId);
+
+            int rowsUpdated = stmt.executeUpdate();
+
+            return rowsUpdated > 0;  // true if update successful
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public boolean checkPassword(String plainPassword, String hashedPassword) {
+        return BCrypt.checkpw(plainPassword, hashedPassword);
+    }
     /**
      * Test method - Generate hashed password
      */

@@ -181,6 +181,13 @@
         .action-btn-warning {
             background: #f39c12;
         }
+        .action-btn-purple {
+		    background: #8e44ad;
+		}
+		
+		.action-btn-purple:hover {
+		    background: #732d91;
+		}
     </style>
 </head>
 <body>
@@ -223,20 +230,25 @@
         <div class="quick-actions">
             <h2>Quick Actions</h2>
             <div class="action-grid">
-                <a href="student?action=list" class="action-btn action-btn-primary">
-                    📋 View All Students
-                </a>
-                
-                <c:if test="${sessionScope.role eq 'admin'}">
-                    <a href="student?action=new" class="action-btn action-btn-success">
-                        ➕ Add New Student
-                    </a>
-                </c:if>
-                
-                <a href="student?action=search" class="action-btn action-btn-warning">
-                    🔍 Search Students
-                </a>
-            </div>
+			    <a href="student?action=list" class="action-btn action-btn-primary">
+			        📋 View All Students
+			    </a>
+			                
+			    <c:if test="${sessionScope.role eq 'admin'}">
+			        <a href="student?action=new" class="action-btn action-btn-success">
+			            ➕ Add New Student
+			        </a>
+			    </c:if>
+			                
+			    <a href="student?action=search" class="action-btn action-btn-warning">
+			        🔍 Search Students
+			    </a>
+			
+			    <!-- New Change Password Button -->
+			    <a href="change-password" class="action-btn action-btn-purple">
+			        🔑 Change Password
+			    </a>
+			</div>
         </div>
     </div>
 </body>
