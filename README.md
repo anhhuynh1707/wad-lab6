@@ -28,9 +28,9 @@ Class: WAD_G01_Lab03_Tue1234
 #### AUTHENTICATION COMPONENTS:
 - Models: User.java
 - DAOs: UserDAO.java
-- Controllers: LoginController.java, LogoutController.java, DashboardController.java
+- Controllers: LoginController.java, LogoutController.java, DashboardController.java, ChangePasswordController
 - Filters: AuthFilter.java, AdminFilter.java
-- Views: login.jsp, dashboard.jsp, updated student-list.jsp
+- Views: login.jsp, dashboard.jsp, updated student-list.jsp, change-password.jsp
 
 #### 🧪 TEST CREDENTIALS:
 Admin:
@@ -50,6 +50,7 @@ Regular User:
 - Admin authorization filter
 - Role-based UI elements
 - Password security
+- Change password
 
 #### 🔐 SECURITY MEASURES:
 - BCrypt password hashing
@@ -60,10 +61,11 @@ Regular User:
 - XSS prevention (JSTL escaping)
 
 #### ❗ KNOWN ISSUES:
-- [List any bugs or limitations]
+- Taking many times to find and configure (install/uninstall) the Tomcat server and Eclipse for Web Developer.
+- A little bit confusing about the authentication, authorization, and session, and how they work.
 
 #### BONUS FEATURES:
-- [List any bonus features implemented]
+- No new features!
 
 ⌚ **TIME SPENT:** 6 hours
 
